@@ -1,23 +1,62 @@
-package com.codingforcookies.armorequip;
+package com.jeff_media.armorequipevent;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
+ * Called when a player equips or unequips a piece of armor.
+ *
  * @author Arnah
  * @since Jul 30, 2015
  */
-public final class ArmorEquipEvent extends PlayerEvent implements Cancellable{
+public final class ArmorEquipEvent extends PlayerEvent implements Cancellable {
 	
 	private static final HandlerList handlers = new HandlerList();
 	private boolean cancel = false;
 	private final EquipMethod equipType;
 	private final ArmorType type;
 	private ItemStack oldArmorPiece, newArmorPiece;
-	
+
+	/**
+	 * Registers the listeners for this event. If you forget to call this method, then the event will never get caled.
+	 * @param plugin Plugin to call this event from
+	 */
+	public static void registerListener(JavaPlugin plugin) {
+		Bukkit.getServer().getPluginManager().registerEvents(new ArmorListener(getBlockedMaterialNames(plugin)), plugin);
+		try{
+			//Better way to check for this? Only in 1.13.1+?
+			Class.forName("org.bukkit.event.block.BlockDispenseArmorEvent");
+			Bukkit.getServer().getPluginManager().registerEvents(new DispenserArmorListener(), plugin);
+		} catch(Exception ignored) {
+
+		}
+	}
+
+	private static List<String> getBlockedMaterialNames(JavaPlugin plugin) {
+		try (InputStream inputStream = plugin.getResource("armorequipevent-blocked.txt")) {
+			assert inputStream != null;
+			try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+				return reader.lines().collect(Collectors.toList());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+	}
+
 	/**
 	 * @param player The player who put on / removed the armor.
 	 * @param type The ArmorType of the armor added
@@ -54,7 +93,7 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable{
 	/**
 	 * Sets if this event should be cancelled.
 	 *
-	 * @param cancel If this event should be cancelled.
+	 * @param cancel If this event should be cancelled. When the event is cancelled, the armor is not changed.
 	 */
 	public final void setCancelled(final boolean cancel){
 		this.cancel = cancel;
@@ -68,7 +107,11 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable{
 	public final boolean isCancelled(){
 		return cancel;
 	}
-	
+
+	/**
+	 * Returns the type of armor involved in this event
+	 * @return ArmorType
+	 */
 	public final ArmorType getType(){
 		return type;
 	}
@@ -101,7 +144,10 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable{
 	public EquipMethod getMethod(){
 		return equipType;
 	}
-	
+
+	/**
+	 * Represents the way of equipping or uneqipping armor.
+	 */
 	public enum EquipMethod{// These have got to be the worst documentations ever.
 		/**
 		 * When you shift click an armor piece to equip or unequip
@@ -136,6 +182,5 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable{
 		 * When you die causing all armor to unequip
 		 */
 		DEATH,
-		;
 	}
 }

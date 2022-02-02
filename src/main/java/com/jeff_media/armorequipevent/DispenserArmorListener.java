@@ -1,4 +1,4 @@
-package com.codingforcookies.armorequip;
+package com.jeff_media.armorequipevent;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -10,11 +10,10 @@ import org.bukkit.event.block.BlockDispenseArmorEvent;
  * @author Arnah
  * @since Feb 08, 2019
  */
-public class DispenserArmorListener implements Listener{
-	
-	
+class DispenserArmorListener implements Listener{
+
 	@EventHandler
-	public void dispenseArmorEvent(BlockDispenseArmorEvent event){
+	public void onArmorDispense(BlockDispenseArmorEvent event){
 		ArmorType type = ArmorType.matchType(event.getItem());
 		if(type != null){
 			if(event.getTargetEntity() instanceof Player){
