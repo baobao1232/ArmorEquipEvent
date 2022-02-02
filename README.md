@@ -83,7 +83,7 @@ My **CustomBlockData** library provides a PersistentDataContainer for every bloc
 Adds a ton of new **PersistentDataTypes** to use with Bukkit's PersistentDataContainer.
 
 ### [SpigotUpdateChecker](https://github.com/JEFF-Media-GbR/Spigot-UpdateChecker)
-Powerful **UpdateChecker** for your plugins, with only line of code.
+Powerful **UpdateChecker** for your plugins, with only **one line of code**.
 
 ## Discord
 
