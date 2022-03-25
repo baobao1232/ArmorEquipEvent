@@ -1,10 +1,10 @@
 # ArmorEquipEvent
 <!--- Buttons start -->
 <p align="center">
-  <a href="https://spigotmc.org/">
+  <a href="https://www.spigotmc.org/threads/arnuhs-armorequipevent.545188/">
     <img src="https://static.jeff-media.com/img/button_spigotmc_thread.png?3" alt="SpigotMC Thread">
   </a>
-  <a href="https://hub.jeff-media.com/javadocs/">
+  <a href="https://hub.jeff-media.com/javadocs/armorequipevent">
     <img src="https://static.jeff-media.com/img/button_javadocs.png?3" alt="Javadocs">
   </a>
   <a href="https://discord.jeff-media.com/">
