@@ -15,7 +15,7 @@
   </a>
 </p>
 <!--- Buttons end -->
-This is a maintained version of [Arnuh's ArmorEquipEvent](https://github.com/Arnuh/ArmorEquipEvent) including a proper maven artifact.
+This is a maintained version of <a href="https://github.com/Arnuh/ArmorEquipEvent">Arnuh's ArmorEquipEvent</a> including a proper maven artifact.
 
 ## Maven information
 
