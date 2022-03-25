@@ -7,7 +7,7 @@
     <img src="https://static.jeff-media.com/img/button_javadocs.png?" alt="Javadocs">
   </a>
   <a href="https://discord.jeff-media.com/">
-    <img src="https://static.jeff-media.com/img/button_discord.png?" alt="Discord">
+    <img src="https://static.jeff-media.com/img/button_discord.png?2" alt="Discord">
   </a>
   <a href="https://paypal.me/mfnalex">
     <img src="https://static.jeff-media.com/img/button_donate.png?2">
