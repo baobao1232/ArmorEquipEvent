@@ -10,7 +10,7 @@
     <img src="https://static.jeff-media.com/img/button_discord.png?" alt="Discord">
   </a>
   <a href="https://paypal.me/mfnalex">
-    <img src="https://static.jeff-media.com/img/button_donate.png?">
+    <img src="https://static.jeff-media.com/img/button_donate.png?2">
   </a>
 </p>
 <!--- Buttons end -->
