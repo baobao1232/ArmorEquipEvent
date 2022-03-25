@@ -1,16 +1,16 @@
 # ArmorEquipEvent
 <p align="center">
   <a href="https://www.spigotmc.org/threads/arnuhs-armorequipevent.545188/">
-    <img src="https://static.jeff-media.com/img/button_spigotmc_thread.png" alt="SpigotMC Thread">
+    <img src="https://static.jeff-media.com/img/button_spigotmc_thread.png?" alt="SpigotMC Thread">
   </a>
   <a href="https://hub.jeff-media.com/javadocs/armorequipevent/com/jeff_media/armorequipevent/package-summary.html">
-    <img src="https://static.jeff-media.com/img/button_javadocs.png" alt="Javadocs">
+    <img src="https://static.jeff-media.com/img/button_javadocs.png?" alt="Javadocs">
   </a>
   <a href="https://discord.jeff-media.com/">
-    <img src="https://static.jeff-media.com/img/button_discord.png" alt="Discord">
+    <img src="https://static.jeff-media.com/img/button_discord.png?" alt="Discord">
   </a>
   <a href="https://paypal.me/mfnalex">
-    <img src="https://static.jeff-media.com/img/button_donate.png">
+    <img src="https://static.jeff-media.com/img/button_donate.png?">
   </a>
 </p>
 <!--- Buttons end -->
