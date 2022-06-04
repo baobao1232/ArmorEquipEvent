@@ -30,7 +30,7 @@ The latest version is available in my maven repository:
 <dependency>
   <groupId>com.jeff_media</groupId>
   <artifactId>ArmorEquipEvent</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
