@@ -1,6 +1,21 @@
 # ArmorEquipEvent
-
-This is a maintained version of [Arnuh's ArmorEquipEvent](https://github.com/Arnuh/ArmorEquipEvent) including a proper maven artifact.
+<!--- Buttons start -->
+<p align="center">
+  <a href="https://www.spigotmc.org/threads/arnuhs-armorequipevent.545188/">
+    <img src="https://static.jeff-media.com/img/button_spigotmc_thread.png?3" alt="SpigotMC Thread">
+  </a>
+  <a href="https://hub.jeff-media.com/javadocs/armorequipevent">
+    <img src="https://static.jeff-media.com/img/button_javadocs.png?3" alt="Javadocs">
+  </a>
+  <a href="https://discord.jeff-media.com/">
+    <img src="https://static.jeff-media.com/img/button_discord.png?3" alt="Discord">
+  </a>
+  <a href="https://paypal.me/mfnalex">
+    <img src="https://static.jeff-media.com/img/button_donate.png?3" alt="Donate">
+  </a>
+</p>
+<!--- Buttons end -->
+This is a maintained version of <a href="https://github.com/Arnuh/ArmorEquipEvent">Arnuh's ArmorEquipEvent</a> including a proper maven artifact.
 
 ## Maven information
 
