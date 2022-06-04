@@ -50,11 +50,13 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable {
 			assert inputStream != null;
 			try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
 				return reader.lines().collect(Collectors.toList());
+			} catch (Exception ignored1) {
+
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-			return new ArrayList<>();
+		} catch (IOException ignored2) {
+			//e.printStackTrace();
 		}
+		return new ArrayList<>();
 	}
 
 	/**
