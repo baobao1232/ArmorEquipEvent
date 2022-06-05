@@ -38,7 +38,6 @@ class ArmorListener implements Listener{
 	@EventHandler(priority =  EventPriority.HIGHEST, ignoreCancelled = true)
 	public final void onClick(final InventoryClickEvent event){
 		boolean shift = false, numberkey = false;
-		if(event.isCancelled()) return;
 		if(event.getAction() == InventoryAction.NOTHING) return;// Why does this get called if nothing happens??
 		if(event.getClick().equals(ClickType.SHIFT_LEFT) || event.getClick().equals(ClickType.SHIFT_RIGHT)){
 			shift = true;
@@ -155,16 +154,6 @@ class ArmorListener implements Listener{
 				event.setCancelled(true);
 			}
 		}
-		// Debug shit
-		/*System.out.println("Slots: " + event.getInventorySlots().toString());
-		System.out.println("Raw Slots: " + event.getRawSlots().toString());
-		if(event.getCursor() != null){
-			System.out.println("Cursor: " + event.getCursor().getType().name());
-		}
-		if(event.getOldCursor() != null){
-			System.out.println("OldCursor: " + event.getOldCursor().getType().name());
-		}
-		System.out.println("Type: " + event.getType().name());*/
 	}
 
 	@EventHandler
