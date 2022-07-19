@@ -122,6 +122,9 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable {
 	 * Returns the last equipped armor piece, could be a piece of armor, or null
 	 */
 	public final ItemStack getOldArmorPiece(){
+		if(ArmorListener.isEmpty(oldArmorPiece)){
+			return null;
+		}
 		return oldArmorPiece;
 	}
 	
@@ -133,6 +136,9 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable {
 	 * Returns the newly equipped armor, could be a piece of armor, or null
 	 */
 	public final ItemStack getNewArmorPiece(){
+		if(ArmorListener.isEmpty(newArmorPiece)){
+			return null;
+		}
 		return newArmorPiece;
 	}
 	

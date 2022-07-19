@@ -15,7 +15,7 @@
   </a>
 </p>
 <!--- Buttons end -->
-This is a maintained version of <a href="https://github.com/Arnuh/ArmorEquipEvent">Arnuh's ArmorEquipEvent</a> including a proper maven artifact.
+This is a maintained version of <a href="https://github.com/Arnuh/ArmorEquipEvent">Arnuh's ArmorEquipEvent</a> including some bug fixes and a proper maven artifact.
 
 ## Maven information
 
@@ -30,7 +30,7 @@ The latest version is available in my maven repository:
 <dependency>
   <groupId>com.jeff_media</groupId>
   <artifactId>ArmorEquipEvent</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <scope>compile</scope>
 </dependency>
 ```
