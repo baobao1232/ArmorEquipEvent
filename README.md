@@ -89,6 +89,14 @@ You can now listen to this event, cancel it or change the equipped armor.
 
 Javadocs are available here: https://hub.jeff-media.com/javadocs/armorequipevent
 
+## Changes
+
+The following things have changed since the latest version of Arnuh's original ArmorEquipEvent:
+
+- getNewArmorPiece() and getOldArmorPiece() properly return null instead of returning an empty itemstack sometimes
+- The event properly gets called when equipping or unequipping armor using the hotbar swap key
+- Available as a maven artifact - no need to copy/paste classes manually
+
 ## Other libraries by me
 
 ### [CustomBlockData](https://github.com/JEFF-Media-GbR/CustomBlockData)
