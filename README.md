@@ -95,6 +95,7 @@ The following things have changed since the latest version of Arnuh's original A
 
 - getNewArmorPiece() and getOldArmorPiece() properly return null instead of returning an empty itemstack sometimes
 - The event properly gets called when equipping or unequipping armor using the hotbar swap key
+- Prevents the event from being called when setting setKeepInventory in the PlayerDeathEvent to true (the original version only detects this on LOW and LOWEST priority)
 - Available as a maven artifact - no need to copy/paste classes manually
 
 ## Other libraries by me

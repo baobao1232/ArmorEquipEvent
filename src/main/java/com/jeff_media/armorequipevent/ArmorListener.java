@@ -22,6 +22,8 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
+import static org.bukkit.event.EventPriority.MONITOR;
+
 /**
  * @author Arnah
  * @since Jul 30, 2015
@@ -241,7 +243,7 @@ class ArmorListener implements Listener{
 		}
 	}
 
-	@EventHandler
+	@EventHandler(priority = MONITOR, ignoreCancelled = true)
 	public void onDeath(PlayerDeathEvent event){
 		Player p = event.getEntity();
 		if(event.getKeepInventory()) return;
