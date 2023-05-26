@@ -24,7 +24,7 @@ The latest version is available in my maven repository:
 ```xml
 <repository>
   <id>jeff-media-public</id>
-  <url>https://hub.jeff-media.com/nexus/repository/jeff-media-public/</url>
+  <url>https://repo.jeff-media.com/public/</url>
 </repository>
 
 <dependency>
