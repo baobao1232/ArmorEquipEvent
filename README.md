@@ -43,7 +43,7 @@ Please note that you must also shade and relocate the artifact:
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-shade-plugin</artifactId>
-      <version>3.2.4</version>
+      <version>3.3.1</version>
       <configuration>
         <relocations>
           <relocation>
