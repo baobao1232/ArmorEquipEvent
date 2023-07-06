@@ -1,9 +1,5 @@
 package com.jeff_media.armorequipevent;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -17,10 +13,13 @@ import org.bukkit.event.inventory.*;
 import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemBreakEvent;
-import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 import static org.bukkit.event.EventPriority.MONITOR;
 
@@ -50,7 +49,7 @@ class ArmorListener implements Listener{
 		if(event.getClick().equals(ClickType.NUMBER_KEY)){
 			numberkey = true;
 		}
-		if(event.getClick() == ClickType.SWAP_OFFHAND) {
+		if(isValidEnum(ClickType.class, "SWAP_OFFHAND") && event.getClick() == ClickType.SWAP_OFFHAND) {
 			numberkey = true;
 		}
 		if(event.getSlotType() != SlotType.ARMOR && event.getSlotType() != SlotType.QUICKBAR && event.getSlotType() != SlotType.CONTAINER) return;
@@ -137,7 +136,7 @@ class ArmorListener implements Listener{
 			}
 			ArmorType newArmorType = ArmorType.matchType(event.getItem());
 			// Carved pumpkins cannot be equipped using right-click
-			if(event.getItem() != null && event.getItem().getType() == Material.CARVED_PUMPKIN) return;
+			if(event.getItem() != null && isCarvedPumpkin(event.getItem().getType())) return;
 
 			if(newArmorType != null){
 				if(newArmorType.equals(ArmorType.HELMET) && isEmpty(event.getPlayer().getInventory().getHelmet()) || newArmorType.equals(ArmorType.CHESTPLATE) && isEmpty(event.getPlayer().getInventory().getChestplate()) || newArmorType.equals(ArmorType.LEGGINGS) && isEmpty(event.getPlayer().getInventory().getLeggings()) || newArmorType.equals(ArmorType.BOOTS) && isEmpty(event.getPlayer().getInventory().getBoots())){
@@ -153,7 +152,7 @@ class ArmorListener implements Listener{
 	}
 
 	static boolean isEmpty(ItemStack item) {
-		return (item == null || item.getType().isAir() || item.getAmount() == 0);
+		return (item == null || item.getType() == Material.AIR || item.getAmount() == 0);
 	}
 
 //	@EventHandler(priority =  EventPriority.HIGHEST, ignoreCancelled = true)
@@ -253,6 +252,29 @@ class ArmorListener implements Listener{
 				// No way to cancel a death event.
 			}
 		}
+	}
+
+	private static  <E extends Enum<E>> boolean isValidEnum(Class<E> enumClass, String enumName) {
+		if (enumName == null) {
+			return false;
+		} else {
+			try {
+				Enum.valueOf(enumClass, enumName);
+				return true;
+			} catch (IllegalArgumentException var3) {
+				return false;
+			}
+		}
+	}
+
+	public static boolean isCarvedPumpkin(Material material) {
+
+		if (isValidEnum(Material.class, "CARVED_PUMPKIN")) {
+			return material == Material.CARVED_PUMPKIN;
+		}
+
+		return material == Material.PUMPKIN;
+
 	}
 
 }
