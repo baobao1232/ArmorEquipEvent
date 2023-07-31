@@ -81,7 +81,7 @@ class ArmorListener implements Listener{
 			ItemStack newArmorPiece = event.getCursor();
 			ItemStack oldArmorPiece = event.getCurrentItem();
 			if(numberkey){
-				System.out.println("NumberKey");
+				//System.out.println("NumberKey");
 				if(event.getClickedInventory().getType().equals(InventoryType.PLAYER)){// Prevents shit in the 2by2 crafting
 					// e.getClickedInventory() == The players inventory
 					// e.getHotBarButton() == key people are pressing to equip or unequip the item to or from.
