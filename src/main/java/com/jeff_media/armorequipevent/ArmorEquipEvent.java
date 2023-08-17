@@ -8,6 +8,7 @@ import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import javax.annotation.Nullable;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,6 +61,7 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable {
 	}
 
 	/**
+	 * Creates a new ArmorEquipEvent
 	 * @param player The player who put on / removed the armor.
 	 * @param type The ArmorType of the armor added
 	 * @param oldArmorPiece The ItemStack of the armor removed.
@@ -133,16 +135,22 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable {
 	}
 	
 	/**
-	 * Returns the newly equipped armor, could be a piece of armor, or null
+	 * Returns the newly equipped armor or null if the armor was unequipped
+	 * @return ItemStack of armor or null
 	 */
+	@Nullable
 	public final ItemStack getNewArmorPiece(){
 		if(ArmorListener.isEmpty(newArmorPiece)){
 			return null;
 		}
 		return newArmorPiece;
 	}
-	
-	public final void setNewArmorPiece(final ItemStack newArmorPiece){
+
+	/**
+	 * Sets the new armor piece
+	 * @param newArmorPiece The new armor piece
+	 */
+	public final void setNewArmorPiece(@Nullable final ItemStack newArmorPiece){
 		this.newArmorPiece = newArmorPiece;
 	}
 	

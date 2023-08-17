@@ -19,18 +19,13 @@ This is a maintained version of <a href="https://github.com/Arnuh/ArmorEquipEven
 
 ## Maven information
 
-The latest version is available in my maven repository:
+The latest version is available on Maven Central:
 
 ```xml
-<repository>
-  <id>jeff-media-public</id>
-  <url>https://repo.jeff-media.com/public/</url>
-</repository>
-
 <dependency>
-  <groupId>com.jeff_media</groupId>
-  <artifactId>ArmorEquipEvent</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <groupId>com.jeff-media</groupId>
+  <artifactId>armor-equip-event</artifactId>
+  <version>1.0.2</version>
   <scope>compile</scope>
 </dependency>
 ```
