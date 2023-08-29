@@ -43,7 +43,7 @@ public enum ArmorType{
 		if(ArmorListener.isEmpty(itemStack)) return null;
 		Material type = itemStack.getType();
 		String typeName = type.name();
-		if(typeName.endsWith("_HELMET") || typeName.endsWith("_SKULL") || typeName.endsWith("_HEAD") || type == Material.CARVED_PUMPKIN) return HELMET;
+		if(typeName.endsWith("_HELMET") || typeName.endsWith("_SKULL") || typeName.endsWith("_HEAD") || ArmorListener.isCarvedPumpkin(type)) return HELMET;
 		else if(typeName.endsWith("_CHESTPLATE") || typeName.equals("ELYTRA")) return CHESTPLATE;
 		else if(typeName.endsWith("_LEGGINGS")) return LEGGINGS;
 		else if(typeName.endsWith("_BOOTS")) return BOOTS;
